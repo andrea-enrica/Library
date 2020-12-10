@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="library.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+    </style>
     <title>Library App</title>
 </head>
 <body>
+    <header>
+        <h1>My Virtual Library <img alt = "Image with books" src ="media/books-lineart.png"></h1>
+        <button class="add-new-book">New Book</button>
+    </header>
+    <div class="cards"></div>
+    
+    <div id="popUpForm">
+        <form class="new-book-form">
+            <div class ="formBook">
+                <h2>Add New Book</h2>
+                <hr>
 
+                <label for="Title"><b>Title*</b></label> 
+                <input type="text" placeholder="Enter Book Title" id="newTitle" required/>
+            
+                <label for="Author"><b>Author*</b></label>
+                <input type="text" placeholder="Enter Author" id="newAuthor" required/>
+            
+                <label for="Pages"><b>Pages*</b></label>
+                <input type="number" placeholder = "Enter number of pages" id ="newPages" min="0" required/>
+
+                <label for="Read"><b>Book Status*</b></label>
+                <select placeholder="Select your book status!" id="newRead" required>
+                    <option value ="null">Select your book status!</option>
+                    <option value ="false">I didn't read it...</option>
+                    <option value ="true">I already read it!</option>
+                </select>
+                <span id="err-msg" style="display: none; color: red">* All fields are required!</span>
+                <hr>
+            </div>
+            <div class="formButtons">
+                <button type="button" class="cancel">Cancel</button>
+                <button type="button" class="clear">Clear fields</button>
+                <button type="button" class="confirm">Add</button>
+            </div>
+        </form>
+    </div>
+    
+    <footer>
+        <p>This project is part of
+            <a href="https://www.theodinproject.com">The Odin Project Curriculum</a>
+          </p>
+    </footer>
 </body>
 <script src='library.js'></script>
 </html>

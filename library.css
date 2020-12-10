@@ -1,0 +1,213 @@
+body{
+    font-family: 'Yatra One', cursive; 
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: #f1eded;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 48px 16px 48px;
+    border-bottom:8px solid #39eb74;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 15px;
+    margin: 50px 250px 50px 250px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+.add-new-book {
+    border-radius: 20%;
+    border-color:  rgb(109, 146, 39);;
+    background-color: #39eb74;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    font-family: 'Yatra One', cursive; 
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    outline: none;
+    transition: 0.5s;
+    transform: rotate3d(0);
+}
+
+.add-new-book:hover {
+    transform: rotate3d(2, -1, -1, -0.2turn);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-flow: row wrap;
+    margin: 50px 250px 50px 250px;
+}
+
+.books-cards {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 32px;
+    line-height: 1.2;
+    text-align: start;
+    margin: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #e3e3e3 0%, #39eb74 100%);
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+@media(max-width: 650px){
+    .books-cards{
+        display: block;
+        margin: 0 auto;
+    }
+    .cards{
+        width: 32rem;
+        height: 42.6rem;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+    }
+}
+@media(min-width: 65px){
+    .books-cards{
+        justify-content: start;
+    }
+}
+
+.removeBook, .readStatus, .title, .pages, .author{
+    flex-flow: row wrap;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.removeBook {
+    font-family: 'Yatra One', cursive; 
+    padding: 0;
+    text-align: end;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.readStatus{
+    font-family: 'Yatra One', cursive; 
+    padding: 0;
+    border: none;
+    outline: none;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: linear-gradient(135deg, #e3e3e3 0%, #f1f513 100%);
+}
+
+.removeBook:hover {
+    color: rgb(238, 18, 18);
+    transition: 0.3s;
+}
+
+#popUpForm {
+    display: none;
+    position: absolute; 
+    z-index: 1;
+    width: 100%;
+    height: 100%; 
+    top:0;
+    overflow: auto;
+    background-color: rgba(158, 142, 142, 0.5);
+}
+
+.new-book-form { 
+    display: flex;
+    flex-direction: column;
+    margin: 200px 530px 0 530px;
+    border: solid 1px #d3d3d3;
+    border-radius: 10px;
+    background-color: #fff;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+h2 {text-align: center;}
+
+.formBook {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 16px 48px 16px 48px;
+    font-size: 20px;
+}
+
+#newTitle, #newAuthor, #newPages, #newRead {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: medium;
+    font-family: 'Yatra One', cursive;
+    outline: none;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.formButtons {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 16px 48px 16px 48px;
+    direction: rtl;
+}
+
+.cancel, .clear, .confirm {
+    border-radius: 10px;
+    font-size: medium;
+    font-family: 'Yatra One', cursive;
+    font-size: 20px;
+    background-color: #fff;
+    justify-content: space-between;
+    margin-left: 10px;
+    border-color:  rgb(109, 146, 39);;
+    background-color: #39eb74;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    outline: none;
+}
+
+.cancel:hover, .clear:hover, .confirm:hover{
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+
+#title:hover, #author:hover, #pages:hover, #read:hover, .readStatus, .removeBook {cursor: pointer;}
+
+@media screen and (max-width: 1300px) and (min-width: 500px) {
+    .new-book-form ,.formBook, header{
+        height:85%;
+            margin:5% auto;
+            max-height: 57em;
+        max-width:50em;
+        width:60%;
+        font-size:15px;
+        }
+    #newTitle, #newAuthor, #newPages, #newRead, .cancel, .clear, .confirm {
+        padding: 0;
+        font-size: 15px;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
