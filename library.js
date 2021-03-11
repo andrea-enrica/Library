@@ -33,6 +33,7 @@ const addBookButton = document.getElementsByClassName('confirm')[0].addEventList
         document.getElementById('popUpForm').style.display ='none';
         clearPopUp();
     }
+    localStorage.setItem('BookData', JSON.stringify(myLibrary)); 
 });
 
 const clearFieldButton = document.getElementsByClassName('clear')[0].addEventListener('click', () => {
